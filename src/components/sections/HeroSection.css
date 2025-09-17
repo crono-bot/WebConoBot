@@ -2,8 +2,9 @@
 
 /* Variables CSS para consistencia */
 :root {
-  --primary-color: #00c853;
-  --secondary-color: #00e676;
+  /* Adaptado para coincidir con la paleta de las tarjetas de venta */
+  --primary-color: #33ff99; /* Verde neón de las tarjetas */
+  --secondary-color: #00b377; /* Variante del verde para el hover */
   --text-dark: #222222;
   --text-light: #f0f0f0;
   --background-dark: #121212;
@@ -78,7 +79,7 @@
   max-width: 800px; /* Reduce un poco el ancho máximo para mejor lectura */
   margin: auto; /* Asegura el centrado horizontal */
   /* Añadimos un poco de padding vertical para asegurar que no se pegue a los bordes
-     en pantallas pequeñas, aunque flexbox ya maneja el centrado */
+       en pantallas pequeñas, aunque flexbox ya maneja el centrado */
   padding-top: 5vh; 
   padding-bottom: 5vh;
   animation: fadeIn 1s ease-out;
@@ -110,25 +111,20 @@
 
 /* Botón principal */
 .primary-button {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
-  animation: slideInUp 1.4s ease-out 0.4s both;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .primary-button:hover {
-  background: var(--secondary-color);
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 200, 83, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(51, 255, 153, 0.6);
 }
 
 /* Puntos de navegación del slider */
@@ -187,5 +183,5 @@
   .hero-title, .hero-subtitle, .primary-button, .slider-background {
     animation: none !important;
     transition: none !important;
-  }
+  } 
 }
