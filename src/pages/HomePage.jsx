@@ -53,6 +53,7 @@ const HomePage = ({ headerHeight }) => {
             <HeroSection headerHeight={headerHeight} />
 
             <section className="features-section">
+                <div className="section-divider"></div>
                 <h2 className="section-title">Nuestros Cursos Estrella</h2>
                 <div className="features-grid">
                     <FeatureCard
