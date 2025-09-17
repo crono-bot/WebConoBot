@@ -1,0 +1,59 @@
+:root {
+  --color-accent: #00c853;
+  --color-dark: #1d1d1d;
+  --color-light: #e0e0e0;
+  --color-text-dark: #333333;
+  --color-bg-secondary: #282828;
+  --color-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.primary-button {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* Slick slider dots */
+.slick-dots {
+  bottom: 30px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: var(--color-light);
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--color-accent);
+  opacity: 1;
+}

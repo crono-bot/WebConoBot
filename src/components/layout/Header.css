@@ -1,0 +1,38 @@
+.header {
+  background-color: var(--color-dark);
+  padding: 20px 40px; /* Más padding para una sensación premium */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-bg-secondary); /* Borde inferior sutil */
+}
+
+.logo-link {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover {
+  color: var(--color-accent); /* El logo también se ilumina */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px; /* Espacio entre los enlaces */
+}
+
+.nav-link {
+  color: var(--color-light); /* Enlaces en gris claro por defecto */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves para el efecto */
+}
+
+.nav-link:hover {
+  color: var(--color-accent); /* El color del enlace se vuelve verde */
+  text-shadow: 0 0 8px var(--color-accent); /* El efecto de "luz verde" */
+}
