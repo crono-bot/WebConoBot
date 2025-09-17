@@ -54,25 +54,33 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: auto;
-  padding: 20px;
+  padding: 50px 40px;
   scroll-behavior: smooth;
-  -ms-overflow-style: none; /* Oculta la barra de scroll en Edge y IE */
-  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
-  
-  /* Propiedades para el efecto de carrusel */
-  scroll-snap-type: x mandatory;
+
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(51, 255, 153, 0.7) transparent;
 }
 
-/* Oculta la barra de scroll en navegadores basados en WebKit (Chrome, Safari) */
+/* Estilos para navegadores basados en WebKit (Chrome, Safari) */
 .features-grid::-webkit-scrollbar {
-  display: none;
+  height: 8px; /* Hace la barra más delgada */
+}
+
+.features-grid::-webkit-scrollbar-track {
+  background: transparent; /* Fondo transparente */
+  border-radius: 10px;
+}
+
+.features-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(51, 255, 153, 0.7); /* Color semitransparente */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Borde transparente */
 }
 
 .features-grid > .feature-card {
   flex-shrink: 0;
   width: 320px;
-  /* Propiedad para el efecto de carrusel */
-  scroll-snap-align: center;
 }
 
 /* Estilo para las tarjetas de cursos */
