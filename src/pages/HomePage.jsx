@@ -35,8 +35,8 @@ const CertificationSection = () => (
                     </div>
                 </div>
                 <div className="card-body">
-                    <h3>Aval de Google Developer Group Ica</h3>
-                    <p>La comunidad de Google Developers Ica respalda tu formación, conectándote con una red global de expertos.</p>
+                    <h3>Aval de Equipo por confirmacion</h3>
+                    <p>Equipo por confirmacion, conectándote con una red global de expertos.</p>
                 </div>
             </div>
         </div>
