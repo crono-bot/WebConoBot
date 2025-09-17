@@ -1,25 +1,100 @@
+/* src/components/common/FeatureCard.css */
+
 .feature-card {
-  padding: 30px;
-  background-color: var(--color-bg-secondary);
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 200, 83, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--color-bg-secondary);
+    background-color: var(--card-background);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 200, 83, 0.4);
-  border-color: var(--color-accent);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--primary-color);
 }
 
-.feature-title {
-  color: var(--color-accent);
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Título en color verde */
 }
 
-.feature-description {
-  color: var(--color-light);
-  font-size: 1rem;
+/* Nuevo estilo para la imagen del card */
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card-price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.buy-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(51, 255, 153, 0.6);
+}
+
+/* Estilo para la tarjeta destacada */
+.featured-card {
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-image-slice: 1;
+    box-shadow: 0 4px 25px var(--card-shadow), 0 0 40px var(--primary-color);
+    animation: pulse-border 2s infinite ease-in-out;
+}
+
+.featured-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 40px var(--card-shadow), 0 0 50px var(--primary-color);
+}
+
+@keyframes pulse-border {
+    0% {
+        border-image-slice: 1;
+        box-shadow: 0 0 20px var(--card-shadow);
+    }
+    50% {
+        border-image-slice: 1;
+        box-shadow: 0 0 40px var(--primary-color);
+    }
+    100% {
+        border-image-slice: 1;
+        box-shadow: 0 0 20px var(--card-shadow);
+    }
 }

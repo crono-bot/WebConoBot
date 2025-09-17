@@ -1,0 +1,46 @@
+/* TestimonialCard.css - Dark Style */
+
+.testimonial-card {
+  background-color: var(--card-background); /* Fondo de tarjeta oscuro */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-light); /* Color de texto claro */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--card-shadow);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-light); /* El texto de la cita es claro */
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color); /* El borde verde resalta */
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--text-dark); /* Nombre del autor en un color más brillante */
+}
