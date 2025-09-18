@@ -1,153 +1,211 @@
-/* HomePage.css - Estilo Didáctico y Llamativo (Final) */
+/* HomePage.css - Carrusel Corregido */
 
 :root {
   --background-dark: #121212;
   --background-medium-dark: #1a1a1a;
   --text-dark: #e0e0e0;
   --text-light: #c0c0c0;
-  --primary-color: #33ff99; /* Un verde neón sutil */
+  --primary-color: #33ff99;
   --secondary-color: #00b377;
   --card-background: #1e1e1e;
   --card-shadow: rgba(51, 255, 153, 0.2);
   --glow-shadow: 0 0 15px var(--primary-color);
 }
 
-body {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-  font-family: 'Poppins', sans-serif;
+.home-page {
+  overflow-x: hidden;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem); /* Tamaño de fuente más pequeño y adaptable */
-  font-weight: 800; /* Un peso de fuente ligeramente menor */
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
   text-align: center;
-  margin-top: 60px; /* Margen superior ajustado */
-  margin-bottom: 30px; /* Margen inferior ajustado */
+  margin: 2.5rem 0;
   color: var(--text-dark);
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-light);
   line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
 }
 
 .section-divider {
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-  margin: 60px 0;
+  margin: 3.5rem 0;
+}
+
+/* --- Carrusel de Cursos - CORREGIDO --- */
+.carousel-container {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 1.5rem;
+  padding: 40px 0;
+
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+}
+
+.carousel-button {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-button.prev {
+  left: 0;
+}
+
+.carousel-button.next {
+  right: 0;
+}
+
+.carousel-button:hover {
+  background: var(--primary-color);
+  color: var(--background-dark);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
 }
 
 /* --- Features Section (Cursos) --- */
 .features-section {
-  padding: 80px 20px;
+  padding: 3rem 1rem;
   background-color: var(--background-dark);
 }
 
-.features-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: auto;
-  padding: 50px 40px;
-  scroll-behavior: smooth;
-
-  -ms-overflow-style: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(51, 255, 153, 0.7) transparent;
+.card-image {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
 }
 
-/* Estilos para navegadores basados en WebKit (Chrome, Safari) */
-.features-grid::-webkit-scrollbar {
-  height: 8px; /* Hace la barra más delgada */
-}
-
-.features-grid::-webkit-scrollbar-track {
-  background: transparent; /* Fondo transparente */
-  border-radius: 10px;
-}
-
-.features-grid::-webkit-scrollbar-thumb {
-  background-color: rgba(51, 255, 153, 0.7); /* Color semitransparente */
-  border-radius: 10px;
-  border: 2px solid transparent; /* Borde transparente */
-}
-
-.features-grid > .feature-card {
-  flex-shrink: 0;
-  width: 320px;
-}
-
-/* Estilo para las tarjetas de cursos */
-.feature-card {
-  background-color: var(--card-background);
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, rgba(51, 255, 153, 0.1), rgba(0, 179, 119, 0.1));
-  border-image-slice: 1;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(51, 255, 153, 0.25), 0 0 30px var(--primary-color);
-  margin-bottom: 10px;
-}
-
-/* Estilo específico para el curso estrella */
-.featured-card {
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  border-image-slice: 1;
-  box-shadow: 0 4px 25px var(--card-shadow), 0 0 40px var(--primary-color);
-  animation: pulse-border 2s infinite ease-in-out;
-}
-
-.featured-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 15px 40px var(--card-shadow), 0 0 50px var(--primary-color);
-}
-
-@keyframes pulse-border {
-  0% {
-    border-image-slice: 1;
-    box-shadow: 0 0 20px var(--card-shadow);
-  }
-  50% {
-    border-image-slice: 1;
-    box-shadow: 0 0 40px var(--primary-color);
-  }
-  100% {
-    border-image-slice: 1;
-    box-shadow: 0 0 20px var(--card-shadow);
+/* --- Media Queries para el Carrusel --- */
+@media (max-width: 1200px) {
+  .carousel-item {
+    width: 50% !important; /* 2 cards en tablet */
   }
 }
 
-/* --- Certification Section --- */
+@media (max-width: 768px) {
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .carousel {
+    margin: 0 0.5rem;
+  }
+  
+  .carousel-item {
+    width: 100% !important; /* 1 card en mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-button {
+    display: none;
+  }
+  
+  .carousel {
+    margin: 0;
+  }
+  
+  .carousel-item {
+    padding: 0 0.5rem;
+  }
+  
+  .card-image {
+    height: 150px;
+  }
+}
+
+/* Resto del CSS (certification, testimonials, etc.) */
 .certification-section {
   background-color: var(--background-medium-dark);
-  padding: 100px 20px;
+  padding: 4rem 1rem;
   text-align: center;
 }
 
 .certification-header {
   max-width: 900px;
-  margin: 0 auto 60px;
+  margin: 0 auto 3rem;
 }
 
 .certification-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .certification-card {
@@ -156,7 +214,7 @@ body {
   border-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   border-image-slice: 1;
   border-radius: 12px;
-  padding: 40px;
+  padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
@@ -167,18 +225,16 @@ body {
 }
 
 .card-header {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
-/* Contenedor para la imagen, centrándola */
 .certification-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Asegura un espacio para la imagen */
+  height: 100px;
 }
 
-/* Nuevo estilo para las imágenes de certificación */
 .certification-image {
   max-width: 100%;
   max-height: 100%;
@@ -187,24 +243,26 @@ body {
 }
 
 .certification-card:hover .certification-image {
-  transform: scale(1.1); /* Ligero aumento al pasar el mouse */
+  transform: scale(1.1);
 }
 
 .card-body h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
   color: var(--primary-color);
 }
 
 .card-body p {
   font-size: 1rem;
   color: var(--text-light);
+  line-height: 1.5;
 }
 
 .certification-footer {
   max-width: 800px;
-  margin: 60px auto 0;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
 }
 
 .footer-text {
@@ -214,21 +272,21 @@ body {
   font-style: italic;
 }
 
-/* --- Testimonials Section --- */
 .testimonials-section {
-  padding: 80px 20px;
+  padding: 4rem 1rem;
   background-color: var(--background-dark);
 }
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Keyframes para la animación del brillo */
+/* Animaciones */
 @keyframes pulse {
   0% {
     text-shadow: 0 0 5px rgba(51, 255, 153, 0.5);
@@ -238,5 +296,17 @@ body {
   }
   100% {
     text-shadow: 0 0 5px rgba(51, 255, 153, 0.5);
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 20px var(--card-shadow);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--primary-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--card-shadow);
   }
 }
