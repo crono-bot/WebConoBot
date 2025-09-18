@@ -1,4 +1,4 @@
-/* HomePage.css - Carrusel Corregido */
+/* HomePage.css - Carrusel Corregido con Auto Slide */
 
 :root {
   --background-dark: #121212;
@@ -62,7 +62,6 @@
   width: 100%;
   margin: 0 1.5rem;
   padding: 40px 0;
-
 }
 
 .carousel-inner {

@@ -55,11 +55,12 @@ const CertificationSection = () => (
   </section>
 );
 
-// Componente para el carrusel de cursos - VERSIÓN COMPLETAMENTE CORREGIDA
+// Componente para el carrusel de cursos - CON MOVIMIENTO AUTOMÁTICO
 const CoursesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(4);
   const [totalSlides, setTotalSlides] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
   
   const courses = [
     {
@@ -117,6 +118,19 @@ const CoursesCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [courses.length]);
 
+  // Efecto para el movimiento automático
+  useEffect(() => {
+    if (totalSlides <= 1 || isPaused) return; // No hacer auto-slide si solo hay un slide o está pausado
+    
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => {
+        return prevIndex >= totalSlides - 1 ? 0 : prevIndex + 1;
+      });
+    }, 4000); // Cambia cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, [totalSlides, isPaused]);
+
   const nextSlide = () => {
     setCurrentIndex(prevIndex => {
       return prevIndex >= totalSlides - 1 ? 0 : prevIndex + 1;
@@ -133,14 +147,31 @@ const CoursesCarousel = () => {
     setCurrentIndex(index);
   };
 
+  // Pausar el auto-slide cuando el usuario interactúa
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
   // Calcular el ancho de cada slide
   const slideWidth = 100 / slidesToShow;
 
   return (
-    <div className="carousel-container">
+    <div 
+      className="carousel-container"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <h2 className="section-title">Nuestros Cursos Estrella</h2>
       <div className="carousel-wrapper">
-        <button className="carousel-button prev" onClick={prevSlide} aria-label="Anterior">
+        <button 
+          className="carousel-button prev" 
+          onClick={prevSlide} 
+          aria-label="Anterior"
+        >
           &#10094;
         </button>
         
@@ -169,7 +200,11 @@ const CoursesCarousel = () => {
           </div>
         </div>
         
-        <button className="carousel-button next" onClick={nextSlide} aria-label="Siguiente">
+        <button 
+          className="carousel-button next" 
+          onClick={nextSlide} 
+          aria-label="Siguiente"
+        >
           &#10095;
         </button>
       </div>
