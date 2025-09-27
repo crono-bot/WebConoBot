@@ -339,13 +339,13 @@
   margin-bottom: 1.5rem;
 }
 
-.social-links {
+.social-links1 {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-.social-links a {
+.social-links1 a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,7 +357,7 @@
   transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.social-links1 a:hover {
   background: var(--gradient-primary);
   color: #000;
   transform: translateY(-3px);
@@ -377,7 +377,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: var(--gradient-accent-2);
+  background: var(--gradient-primary);
 }
 
 .values-section h2 {
@@ -396,7 +396,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--gradient-accent-2);
+  background: var(--gradient-primary);
   border-radius: 2px;
 }
 
@@ -418,13 +418,13 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-top: 4px solid transparent;
-  border-image: var(--gradient-accent-2);
+  border-image: var(--gradient-primary);
   border-image-slice: 1;
 }
 
 .value-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(107, 92, 255, 0.25);
+  box-shadow: 0 15px 40px rgba(51, 255, 153, 0.2);
 }
 
 .value-icon {

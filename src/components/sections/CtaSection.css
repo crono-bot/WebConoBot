@@ -1,18 +1,60 @@
+/* CTA Section */
 .cta-section {
-  background-color: var(--color-accent);
-  padding: 80px 0;
+  padding: 6rem 2rem;
+  background: var(--background-card);
+  margin-top: 4rem;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  color: white;
 }
 
-.cta-title {
+.cta-content h2 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: var(--color-dark);
+  margin-bottom: 1rem;
 }
 
-.cta-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  color: var(--color-dark);
+.cta-content p {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary, .cta-secondary {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-primary {
+  background: var(--text-accent);
+  color: #000;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-accent);
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.cta-secondary:hover {
+  background: var(--text-accent);
+  color: #000;
 }

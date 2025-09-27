@@ -1,7 +1,70 @@
 .footer {
-  background-color: var(--color-light);
-  color: var(--color-dark);
-  padding: 20px;
+  background: var(--background-dark);
+  color: var(--text-primary);
+  padding: 40px 20px;
   text-align: center;
   margin-top: auto;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-card);
 }
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: var(--gradient-4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--shadow-glow);
+  transition: var(--transition);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--text-accent);
+  transform: translateY(-3px);
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  color: var(--text-accent);
+  transform: scale(1.2);
+  text-shadow: var(--shadow-glow);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+

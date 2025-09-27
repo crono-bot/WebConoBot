@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './AboutPage.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const AboutPage = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -199,7 +200,7 @@ const AboutPage = () => {
                 <h3>{member.name}</h3>
                 <span className="role">{member.role}</span>
                 <p>{member.bio}</p>
-                <div className="social-links">
+                <div className="social-links1">
                   <a href="#"><i className="fab fa-linkedin"></i></a>
                   <a href="#"><i className="fab fa-twitter"></i></a>
                   <a href="#"><i className="fab fa-github"></i></a>

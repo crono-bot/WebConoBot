@@ -3,11 +3,14 @@ import './CtaSection.css';
 const CtaSection = () => {
   return (
     <section className="cta-section">
-      <h2 className="cta-title">¿Listo para Empezar tu Proyecto?</h2>
-      <p className="cta-subtitle">
-        Conversemos sobre tus ideas y te ayudaremos a hacerlas realidad.
-      </p>
-      <button className="primary-button">Solicitar Presupuesto</button>
+      <div className="cta-content">
+        <h2>¿Listo para comenzar tu viaje en QA?</h2>
+        <p>Únete a miles de estudiantes que ya transformaron su carrera</p>
+        <div className="cta-buttons">
+          <button className="cta-primary">Comienza Ahora</button>
+          <button className="cta-secondary">Agendar Consultoría Gratuita</button>
+        </div>
+      </div>
     </section>
   );
 };
