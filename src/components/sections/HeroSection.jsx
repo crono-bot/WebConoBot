@@ -2,26 +2,29 @@ import Slider from 'react-slick';
 import './HeroSection.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Header1 from '../../imagenes/header-1.jpg';
+import Header2 from '../../imagenes/header-2.jpg';
+import Header3 from '../../imagenes/header-3.jpeg';
 
-// Usando imágenes de Pexels como placeholder
+// Contenido específico para QA Testing
 const sliderContent = [
   {
-    image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
-    title: 'Innovación Tecnológica a tu Alcance',
-    subtitle: 'Implementamos las últimas tecnologías para un rendimiento óptimo y soluciones escalables.',
-    buttonText: 'Conoce Más'
+    image: Header1,
+    title: 'Conviértete en Experto en QA Testing',
+    subtitle: 'Domina las técnicas más demandadas del mercado y asegura la calidad de software con nuestros cursos especializados.',
+    buttonText: 'Ver Cursos'
   },
   {
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
-    title: 'Soluciones Digitales que Impulsan tu Negocio',
-    subtitle: 'Desarrollamos experiencias web y aplicaciones móviles a la medida de tus necesidades.',
-    buttonText: 'Contáctanos Ahora'
+    image: Header2,
+    title: 'Aprende Testing con Metodologías Ágiles',
+    subtitle: 'Formación práctica en testing manual, automatizado y de rendimiento con instructores expertos del sector.',
+    buttonText: 'Comenzar Ahora'
   },
   {
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
-    title: 'Diseño Vanguardista y Funcional',
-    subtitle: 'Transformamos tus ideas en interfaces intuitivas y atractivas.',
-    buttonText: 'Ver Proyectos'
+    image: Header3,
+    title: 'Impulsa tu Carrera en Control de Calidad',
+    subtitle: 'Certificaciones reconocidas que te preparan para los desafíos reales de la industria tecnológica.',
+    buttonText: 'Más Información'
   }
 ];
 

@@ -1,11 +1,13 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ onHeightChange }) => {
   const headerRef = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate(); // Añadir useNavigate
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const updateHeight = () => {
@@ -13,42 +15,72 @@ const Header = ({ onHeightChange }) => {
         onHeightChange(headerRef.current.offsetHeight);
       }
     };
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     updateHeight();
+    checkMobile();
+    
     window.addEventListener('resize', updateHeight);
+    window.addEventListener('resize', checkMobile);
+    
     return () => {
       window.removeEventListener('resize', updateHeight);
+      window.removeEventListener('resize', checkMobile);
     };
   }, [onHeightChange]);
 
-  // Función para manejar el scroll suave a secciones SOLO en la página de inicio
   const handleScrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
-      // Si no estamos en la página de inicio, navegamos primero a home con el hash
       navigate(`/#${sectionId}`);
     } else {
-      // Si estamos en home, hacemos scroll suave
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        
-        // Actualizar la URL con el hash sin hacer scroll adicional
         window.history.pushState(null, null, `#${sectionId}`);
       }
     }
+    setMenuOpen(false);
   };
 
-  // Función para determinar si el enlace está activo
-  const isActiveLink = (path) => {
-    return location.pathname === path;
+  const handleOverlayClick = () => {
+    setMenuOpen(false);
   };
+
+  const isActiveLink = (path) => location.pathname === path;
 
   return (
     <header className="header" ref={headerRef}>
       <Link to="/" className="logo-link">Mi App</Link>
-      <nav className="nav-menu">
+
+      {/* Botón Toggle */}
+      <button 
+        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Overlay transparente para la parte izquierda */}
+      {menuOpen && isMobile && (
+        <div 
+          className="overlay-left" 
+          onClick={handleOverlayClick}
+          aria-hidden="true"
+        ></div>
+      )}
+
+      {/* Menú */}
+      <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
         <Link 
           to="/" 
           className={`nav-link ${isActiveLink('/') ? 'active' : ''}`}
+          onClick={() => handleScrollToSection('inicio')}
         >
           Inicio
         </Link>
@@ -56,6 +88,7 @@ const Header = ({ onHeightChange }) => {
         <Link 
           to="/about" 
           className={`nav-link ${isActiveLink('/about') ? 'active' : ''}`}
+          onClick={() => setMenuOpen(false)}
         >
           Nosotros
         </Link>
@@ -63,6 +96,7 @@ const Header = ({ onHeightChange }) => {
         <Link 
           to="/services" 
           className={`nav-link ${isActiveLink('/services') ? 'active' : ''}`}
+          onClick={() => setMenuOpen(false)}
         >
           Servicios
         </Link>
@@ -70,10 +104,10 @@ const Header = ({ onHeightChange }) => {
         <Link 
           to="/contact" 
           className={`nav-link ${isActiveLink('/contact') ? 'active' : ''}`}
+          onClick={() => setMenuOpen(false)}
         >
           Contacto
         </Link>
-
       </nav>
     </header>
   );

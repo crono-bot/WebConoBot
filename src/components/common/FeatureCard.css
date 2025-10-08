@@ -176,87 +176,6 @@
     font-weight: 600;
 }
 
-/* Detalles más compactos */
-.details-section {
-    margin-top: 4px;
-}
-
-.details-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 10px; /* Reducido de 12px */
-    transition: all 0.2s ease;
-    border: 1px solid rgba(51, 255, 153, 0.2);
-    border-radius: 8px;
-    background: rgba(51, 255, 153, 0.05);
-    margin: 8px 0; /* Reducido */
-}
-
-.details-toggle:hover {
-    color: var(--secondary-color);
-    border-color: rgba(51, 255, 153, 0.3);
-    background: rgba(51, 255, 153, 0.1);
-    transform: translateY(-1px);
-}
-
-.details-text {
-    font-weight: 800;
-}
-
-.toggle-arrow {
-    transition: transform 0.2s ease;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.toggle-arrow.expanded {
-    transform: rotate(180deg);
-}
-
-.card-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 15px; /* Reducido de 20px */
-    background: rgba(51, 255, 153, 0.05);
-    border-radius: 10px;
-    border: 1px solid rgba(51, 255, 153, 0.1);
-    margin-top: 12px; /* Reducido */
-    animation: slideDown 0.2s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.detail-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: var(--text-light);
-    padding: 4px 0;
-}
-
-.detail-icon {
-    font-size: 1rem;
-    width: 20px;
-    text-align: center;
-}
-
 /* Footer más compacto */
 .card-footer {
     padding: 16px; /* Reducido de 20px */
@@ -442,6 +361,257 @@
     }
 }
 
+/* ===== ESTILOS DEL MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.course-modal {
+    background: linear-gradient(145deg, #1a1a1a, #252525);
+    border: 1px solid rgba(51, 255, 153, 0.2);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(51, 255, 153, 0.1);
+    animation: modalSlideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid rgba(51, 255, 153, 0.2);
+    background: linear-gradient(135deg, rgba(51, 255, 153, 0.1), rgba(0, 179, 119, 0.05));
+    color: var(--primary-color);
+    border-radius: 20px 20px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-shadow: 0 2px 8px rgba(51, 255, 153, 0.3);
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(51, 255, 153, 0.3);
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.modal-content {
+    padding: 24px;
+}
+
+.modal-section {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(51, 255, 153, 0.2);
+}
+
+.objectives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.objectives-list li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.objectives-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(51, 255, 153, 0.3);
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-tag {
+    background: rgba(51, 255, 153, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    border: 1px solid rgba(51, 255, 153, 0.3);
+    font-weight: 600;
+}
+
+.modal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.detail-item {
+    background: rgba(51, 255, 153, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    border: 1px solid rgba(51, 255, 153, 0.2);
+}
+
+.detail-item h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.detail-item p {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.investment-section {
+    background: rgba(51, 255, 153, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(51, 255, 153, 0.3);
+}
+
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.price-label {
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-shadow: 0 2px 8px rgba(51, 255, 153, 0.4);
+}
+
+.payment-info {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 12px;
+    padding: 24px;
+    border-top: 1px solid rgba(51, 255, 153, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+}
+
+.modal-buy-button, .modal-close-button {
+    flex: 1;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.modal-buy-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    box-shadow: 0 3px 15px rgba(51, 255, 153, 0.3);
+}
+
+.modal-buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(51, 255, 153, 0.4);
+}
+
+.modal-close-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.modal-close-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(51, 255, 153, 0.3);
+    transform: translateY(-2px);
+}
+
 /* Responsive más compacto */
 @media (max-width: 768px) {
     .image-container {
@@ -476,6 +646,32 @@
         grid-template-columns: 1fr;
         gap: 8px;
     }
+    
+    /* Modal responsive */
+    .course-modal {
+        margin: 10px;
+        max-height: 95vh;
+    }
+    
+    .modal-details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-header {
+        padding: 16px;
+    }
+    
+    .modal-content {
+        padding: 16px;
+    }
+    
+    .modal-section {
+        padding: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -509,6 +705,20 @@
     .primary-btn, .secondary-btn {
         min-height: 40px;
         padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* Modal mobile pequeño */
+    .modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .modal-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-buy-button, .modal-close-button {
+        padding: 10px 20px;
         font-size: 0.85rem;
     }
 }

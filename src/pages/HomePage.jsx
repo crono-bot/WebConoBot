@@ -11,10 +11,10 @@ const CertificationSection = () => (
     <div className="section-divider"></div>
     <div className="certification-header">
       <h2 className="section-title">
-        <span className="highlight-text">Certificaciones</span> que Abren Puertas
+        <span className="highlight-text">Certificaciones</span> que Validan tu Expertise
       </h2>
       <p className="section-subtitle">
-        Impulsa tu carrera con nuestro exclusivo programa de certificación. Al finalizar, obtendrás una doble validación:
+        Al completar exitosamente nuestros programas, recibirás una doble certificación que respalda tus conocimientos:
       </p>
     </div>
     <div className="certification-grid">
@@ -23,14 +23,14 @@ const CertificationSection = () => (
           <div className="certification-icon">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/b/b8/ISO_9001-2015_Certified_Logo.png" 
-              alt="Certificado CRONO" 
+              alt="Certificado CRONO BOT" 
               className="certification-image" 
             />
           </div>
         </div>
         <div className="card-body">
-          <h3>Certificado CRONO</h3>
-          <p>Un aval oficial de tu dominio técnico en QA y Automatización, reconocido por la industria.</p>
+          <h3>Certificado CRONO BOT</h3>
+          <p>Certificación oficial que acredita tu dominio en QA Testing y Automatización, respaldada por nuestra empresa.</p>
         </div>
       </div>
       <div className="certification-card">
@@ -38,19 +38,19 @@ const CertificationSection = () => (
           <div className="certification-icon">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/2048px-Google_%22G%22_logo.svg.png" 
-              alt="Google Developers" 
+              alt="GDG Ica" 
               className="certification-image" 
             />
           </div>
         </div>
         <div className="card-body">
-          <h3>Aval de Equipo por confirmacion</h3>
-          <p>Equipo por confirmacion, conectándote con una red global de expertos.</p>
+          <h3>Certificado GDG Ica</h3>
+          <p>Avalado por Google Developer Groups Ica, conectándote con la comunidad tecnológica más importante de la región.</p>
         </div>
       </div>
     </div>
     <div className="certification-footer">
-      <p className="footer-text">Nuestros cursos están alineados con las mejores prácticas y estándares de Google, asegurando que tus habilidades sean relevantes y de alta demanda. ¡Prepárate para destacar!</p>
+      <p className="footer-text">Nuestros programas están diseñados bajo los estándares de Google, garantizando que desarrolles habilidades altamente demandadas en el mercado laboral actual.</p>
     </div>
   </section>
 );
@@ -64,29 +64,29 @@ const CoursesCarousel = () => {
   
   const courses = [
     {
-      title: "QA Intensivo",
-      description: "Domina los fundamentos del aseguramiento de la calidad de software desde cero.",
+      title: "QA Testing Intensivo",
+      description: "Domina los fundamentos del control de calidad de software y metodologías de testing desde cero.",
       price: "$199.99",
       isFeatured: true,
       imageUrl: "https://pandorafms.com/blog/wp-content/uploads/2022/02/QA-1.png"
     },
     {
-      title: "Automatización APIs con Karate",
-      description: "Aprende a automatizar pruebas de API de forma rápida y sencilla con la herramienta Karate.",
+      title: "Automatización de APIs con Karate",
+      description: "Aprende a crear y ejecutar pruebas automatizadas para APIs REST usando el framework Karate.",
       price: "$149.99",
       isFeatured: false,
       imageUrl: "https://cdn.prod.website-files.com/5ff9f08a3928de42db400872/6390b4f99767824dce49d001_01.png"
     },
     {
       title: "Automatización Mobile con Appium",
-      description: "Crea scripts de automatización para aplicaciones móviles en iOS y Android.",
+      description: "Desarrolla scripts de automatización para aplicaciones móviles en plataformas iOS y Android.",
       price: "$179.99",
       isFeatured: false,
       imageUrl: "https://www.automatetheplanet.com/wp-content/uploads/2018/10/getting_started_appium_-android.jpg"
     },
     {
       title: "Automatización Web con Playwright",
-      description: "Pruebas end-to-end de alta velocidad y fiabilidad en navegadores modernos.",
+      description: "Implementa pruebas end-to-end de alta velocidad y confiabilidad en navegadores modernos.",
       price: "$159.99",
       isFeatured: false,
       imageUrl: "https://img-c.udemycdn.com/course/750x422/5064138_5362_4.jpg"
@@ -165,7 +165,7 @@ const CoursesCarousel = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <h2 className="section-title">Nuestros Cursos Estrella</h2>
+      <h2 className="section-title">Programas Especializados en QA Testing</h2>
       <div className="carousel-wrapper">
         <button 
           className="carousel-button prev" 
@@ -240,20 +240,20 @@ const HomePage = ({ headerHeight }) => {
 
       <section className="testimonials-section">
         <div className="section-divider"></div>
-        <h2 className="section-title">Lo que dicen nuestros estudiantes</h2>
+        <h2 className="section-title">Testimonios de Nuestros Estudiantes</h2>
         <div className="testimonials-grid">
           <TestimonialCard
-            text="Gracias al curso, obtuve mi primer trabajo como QA en menos de un mes. ¡La metodología práctica es increíble!"
+            text="Los cursos me prepararon perfectamente para el mercado laboral. En menos de un mes conseguí mi primer empleo como QA Analyst."
             author="Ana G."
             image="https://randomuser.me/api/portraits/women/65.jpg"
           />
           <TestimonialCard
-            text="El curso de automatización con Playwright me dio las habilidades que necesitaba para mi ascenso. ¡Super recomendado!"
+            text="La certificación doble fue un diferenciador clave en mi proceso de contratación. Los reclutadores valoran mucho el aval de GDG Ica."
             author="Luis M."
             image="https://randomuser.me/api/portraits/men/82.jpg"
           />
           <TestimonialCard
-            text="El soporte del equipo es de primera. Siempre están dispuestos a ayudar con cualquier duda que tengas."
+            text="El soporte de los instructores y la comunidad es excepcional. Siempre están disponibles para resolver dudas y guiarte."
             author="Sofía P."
             image="https://randomuser.me/api/portraits/women/44.jpg"
           />
